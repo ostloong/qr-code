@@ -1,6 +1,9 @@
 # Lyra QR Code specification
 
 ## History
+Version 0.3, edited on May 23, 2023 by Alexander Borsuk
+- Minor clarifying about returned types for Navigation
+
 Version 0.2, edited on May 15, 2023 by Alexander Borsuk
 - Fixed issues in the first draft
 
@@ -40,7 +43,7 @@ Values are case-insensitive ISO-639 or BCP-47 case-insensitive language codes.
 
 - Sample 1: `TR:S:en;T:zh-CN;;`
 - Sample 2: `TR:T:fr;S:be;;`
-- Sample 3 (autodetect source language): `TR:T:PT-BR;;`
+- Sample 3 (autodetect source language, note that `S` is not specified): `TR:T:PT-BR;;`
 
 References:
 - https://cloud.google.com/translate/docs/languages
@@ -53,7 +56,7 @@ Encodes coordinates and/or text address of the destination place that can be use
 Always starts with `NAV:`. Supported tags (in any order):
 - `C` = latitude and longitude in decimal format, separated by comma (optional if address is specified)
 - `N` = optional name
-- `T` = optional type of the destination place
+- `T` = optional type of the destination place (`poi` or `address`)
 - `A` = address (optional if coordinates are specified)
 - `M` = optional transportation mode (assume walk if not specified), one of
    - `C` = car
